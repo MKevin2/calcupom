@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel ="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="img/logo.png"/>
     <title>calcupom</title>
 </head>
 
@@ -76,14 +77,15 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="rightDiv">
             <img src="img/calculadora.png" class="logo-calc" alt="Calculadora">
         </div>
-
     </section>
 
     <section class="Sobre" id="Sobre">
-        <div class="back_img">
-            <h1>Bem-vindo</h1>
-            <p>Texto sobre a imagem de fundo</p>
-            <a href="" class="btn">Saiba mais</a>
+        <div class="leftDivSobre">
+            <h1 id="title"> PROPÓSITO DO SISTEMA</h1>
+            <p id="leftText">O <span id="bold"> calcupom </span> nasceu para simplificar sua experiência com descontos. Criamos uma <span id="bold">ferramenta</span> intuitiva que calcula automaticamente o valor final de qualquer produto com base no preço original e na porcentagem de desconto. Seja para aproveitar uma promoção ou planejar suas compras com mais <span id="bold">precisão</span>. Nosso objetivo é transformar cálculos em <span id="bold">decisões inteligentes</span>.</p>
+        </div>
+        <div class="rightDivSobre">
+            <img src="img/jornal.png" class="logo-calc" alt="Calculadora">
         </div>
     </section>
 
@@ -96,11 +98,28 @@ document.addEventListener('DOMContentLoaded', function () {
     </section>
 
     <section class="Contato" id="Contato">
-        <div class="back_img">
-            <h1>Bem-vindo</h1>
-            <p>Texto sobre a imagem de fundo</p>
-            <a href="" class="btn">Saiba mais</a>
+        <div class="leftDivContato">
+            <br><br>
+            <h1 id="title">CONTATE-NOS:</h1>
+
+            <form action="#" method="post">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" rows="4" required></textarea><br><br>
+                <input type="submit" value="Enviar" id="btnEnviar">
+            </form>
+            
+        </div>
+        <div class="rightDivContato">
+
+            <img src="img/report.png" class="logo-calc" alt="Calculadora">
         </div>
     </section>
+    <footer>
+        <p>&copy; 2024 calcupom. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>
