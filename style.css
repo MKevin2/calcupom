@@ -57,12 +57,15 @@ header {
 
 .logo-escrita {
   width: 200px;
-    height: 43,125px;
+  height: 43,125px;
+  filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.3));
 }
 
 .logo-img {
-    width: 60px;
-    height: 60px;  
+  width: 60px;
+  height: 60px;  
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
 }
 
 .nav-links {
@@ -78,6 +81,7 @@ header {
   text-decoration: none;
   font-weight: 500;
   transition: color 1s;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .nav-links a:hover {
@@ -85,63 +89,55 @@ header {
 }
 
 .Home {
-    background-image: url('img/background.png');
-    background-size: cover;    
-    background-position: center;     
-    background-repeat: no-repeat;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    color: white;
-    text-align: center;
+  background-image: url('img/background.png');
+  background-size: cover;    
+  background-position: center;     
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: white;
+  text-align: center;
 }
 
 .Home::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-}
-
-.logo-big {
-    padding-top: 2.5em;
-    width: 100%;
-    height: 64,18px;
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
 }
 
 .leftDiv {
-    position: absolute;   
-    left: 12%;
-    text-align: justify ;
-    max-width: 450px;
+  position: absolute;   
+  left: 12%;
+  text-align: justify ;
+  max-width: 450px;
 }
 
 .img-home {
-    padding: 4em;
-    width: 100%;
-    height: auto;
+  padding: 4em;
+  width: 100%;
+  height: auto;
 }
 
 .rightDiv {
-    position: absolute;   
-    right: 12%;
-    text-align: justify ;
-    max-width: 400px;
+  position: absolute;   
+  right: 12%;
+  text-align: justify ;
+  max-width: 400px;
 }
 
-
 #leftText {
-    padding-bottom: 1em;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 1.5rem;
-
+  padding-bottom: 1em;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 1.5rem;
 }
 
 #btnHome {
   color: white;
-  background-color: #585067;
+  background-color: transparent;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 1.5rem;
   padding: .3em 2em;
@@ -149,41 +145,86 @@ header {
   border-radius: 8px;
   border: none;
   cursor: pointer;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.5);
+  border: 3px solid;
+}
 
+#btnHome:hover{
+  background-color: #585067;
+  transition: 1s;
+  border-color: #585067;
+}
+
+#btnHome:not(:hover){
+  background-color: transparent;
+  transition: 1s;
+}
+
+@keyframes brilho {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes flutuar {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.logo-calc {
+  padding-top: 2.5em;
+  width: 100%;
+  height: 64,18px;
+  animation: flutuar 3s ease-in-out infinite;
+  filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.5));
+}
+
+.logo-big {
+  padding-top: 2.5em;
+  width: 100%;
+  height: 64,18px;
+  filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.5));
 }
 
 .Sobre {
-    background-color: #888197;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    color: white;
-    text-align: center;
+  background-color: #888197;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: white;
+  text-align: center;
 }
 
 .Calculadora {
-    background-image: url('img/background.png');
-    background-size: cover;    
-    background-position: center;     
-    background-repeat: no-repeat;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    color: white;
-    text-align: center;
+  background-image: url('img/background.png');
+  background-size: cover;    
+  background-position: center;     
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: white;
+  text-align: center;
 }
 
 .Contato {
-    background-color: #888197;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    color: white;
-    text-align: center;
+  background-color: #888197;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: white;
+  text-align: center;
 }
