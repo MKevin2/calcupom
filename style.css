@@ -77,7 +77,7 @@ header {
 }
 
 .nav-links a {
-  color: white;
+  color: #f1f1f1;
   text-decoration: none;
   font-weight: 500;
   transition: color 1s;
@@ -98,7 +98,7 @@ header {
   align-items: center;
   justify-content: center;
   position: relative;
-  color: white;
+  color: #f1f1f1;
   text-align: center;
 }
 
@@ -136,7 +136,7 @@ header {
 }
 
 #btnHome {
-  color: white;
+  color: #f1f1f1;
   background-color: transparent;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 1.5rem;
@@ -191,7 +191,7 @@ header {
   align-items: center;
   justify-content: center;
   position: relative;
-  color: white;
+  color: #f1f1f1;
   text-align: center;
 }
 
@@ -220,7 +220,6 @@ header {
   max-width: 550px;
 }
 
-
 .Calculadora {
   background-image: url('img/background.png');
   background-size: cover;    
@@ -231,8 +230,42 @@ header {
   align-items: center;
   justify-content: center;
   position: relative;
-  color: white;
+  color: #f1f1f1;
   text-align: center;
+}
+
+.leftDivCalc {
+  position: absolute;  
+  left: 12%;
+  text-align: justify ;
+  max-width: 470px;
+}
+
+.rightDivCalc {
+  position: absolute;   
+  right: 15%;
+  text-align: justify ;
+  max-width: 570px;
+}
+
+#contact {
+  width: 25em;
+}
+
+#resultado {
+  background-color: #585067;
+  color: #f1f1f1;
+  font-size: 1.2em;
+}
+
+#resultado:hover {
+  background-color: #332c40;
+  transition: 1s;
+}
+
+#resultado:not(:hover){
+  background-color: #585067;
+  transition: 1s;
 }
 
 .Contato {
@@ -242,7 +275,7 @@ header {
   align-items: center;
   justify-content: center;
   position: relative;
-  color: white;
+  color: #f1f1f1;
   text-align: center;
 }
 
@@ -262,7 +295,7 @@ form {
 }
 
 label {
-  font-size: 1.2em;
+  font-size: 1.3em;
   display: block;
   font-weight: bold;
   color: #332c40;
@@ -276,12 +309,12 @@ input {
   font-weight: bold;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   border-radius: 8px;
-  width: 95%;
+  width: 100%;
   height: 3em;
   border: none;
   padding-left: 1em;
 }
-
+ 
 input:focus {
   background-color: #544c62;
   color: #f1f1f1;
@@ -295,7 +328,7 @@ textarea {
   padding: 1em;
   font-weight: bold;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  width: 95%;
+  width: 100%;
   height: 6em;
   border: none;
 }
@@ -306,7 +339,7 @@ textarea:focus {
 }
 
 #btnEnviar {
-  color: white;
+  color: #f1f1f1;
   background-color: #585067;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 1.2rem;

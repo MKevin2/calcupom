@@ -3,121 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel ="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="img/logo.png"/>
-    <title>calcupom</title>
+    <link rel ="stylesheet" href="style.css"> <!-- Chamando CSS -->
+    <link rel="icon" type="image/png" href="img/logo.png"/> <!-- Colocar ícone na página -->
+    <title>calcupom</title> <!-- Título do navegador -->
 </head>
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const header = document.querySelector('header');
-  const headerHeight = header ? header.offsetHeight : 0;
-
-  document.documentElement.style.setProperty('--header-height', headerHeight + 'px');
-
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', function (e) {
-      const href = this.getAttribute('href');
-      if (!href || href === '#') return;
-      const target = document.querySelector(href);
-      if (!target) return;
-      e.preventDefault();
-
-      const targetTop = target.getBoundingClientRect().top + window.pageYOffset;
-      const scrollTo = targetTop - headerHeight - 8;
-
-      window.scrollTo({ top: scrollTo, behavior: 'smooth' });
-
-      history.pushState(null, '', href);
-    });
-  });
-
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.15
-  };
-
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-        obs.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-
-  document.querySelectorAll('section').forEach(sec => observer.observe(sec));
-});
-</script>
-
-
 <body>
+
+    <!-- Cabeçalho da página -->
     <header>
+
         <nav class="navbar">
+
+            <!-- Composição de logos -->
             <div class="logo">
                 <a href="#Home"><img src="img/logo.png" alt="Logo" class="logo-img"> </a>
                 <a href="#Home"><img src="img/logo_escrita.png" alt="Logo Escrita" class="logo-escrita"> </a>
             </div>
+
+            <!-- Links de redirecionamento -->
             <ul class="nav-links">
                 <li><a href="#Home">Home</a></li>
                 <li><a href="#Sobre">Sobre</a></li>
                 <li><a href="#Calculadora">Calculadora</a></li>
                 <li><a href="#Contato">Contato</a></li>
             </ul>
+            
         </nav>
+
     </header>
 
+    <!--  Seção inicial -->
     <section class="Home" id="Home">
+        
         <div class="leftDiv">
+
+            <!-- Logo escrita -->
             <img src="img/logo_escrita.png" class="logo-big" alt="Logo Escrita">
+            
+            <!-- Parágrafo explicativo sobre a página -->
             <p id="leftText">Quer saber quanto vai economizar? Basta digitar o preço original do produto e a porcentagem de desconto — o calcupom faz as contas pra você na hora! Rápido, simples e sem complicações.</p>
+            
+            <!-- Botão redirecionando para a seção "Calculadora" -->
             <a href="#Calculadora"><button id="btnHome">Calcular</button></a>
         </div>
+
         <div class="rightDiv">
+
+            <!-- Elemento visual da seção inicial -->
             <img src="img/calculadora.png" class="logo-calc" alt="Calculadora">
         </div>
+
     </section>
 
+    <!--  Seção sobre -->
     <section class="Sobre" id="Sobre">
+
         <div class="leftDivSobre">
+
+            <!-- Título principal -->
             <h1 id="title"> PROPÓSITO DO SISTEMA</h1>
+
+            <!-- Parágrafo explicativo -->
             <p id="leftText">O <span id="bold"> calcupom </span> nasceu para simplificar sua experiência com descontos. Criamos uma <span id="bold">ferramenta</span> intuitiva que calcula automaticamente o valor final de qualquer produto com base no preço original e na porcentagem de desconto. Seja para aproveitar uma promoção ou planejar suas compras com mais <span id="bold">precisão</span>. Nosso objetivo é transformar cálculos em <span id="bold">decisões inteligentes</span>.</p>
         </div>
+
         <div class="rightDivSobre">
-            <img src="img/jornal.png" class="logo-calc" alt="Calculadora">
+
+            <!-- Elemento visual da seção sobre -->
+            <img src="img/jornal.png" class="logo-calc" alt="Jornal">
         </div>
+
     </section>
 
+    <!--  Seção da calculadora -->
     <section class="Calculadora" id="Calculadora">
-        <div class="back_img">
-            <h1>Bem-vindo</h1>
-            <p>Texto sobre a imagem de fundo</p>
-            <a href="" class="btn">Saiba mais</a>
+
+        <div class="leftDivCalc">
+
+            <!-- Elemento visual da seção da calculadora -->
+            <img src="img/calculadora.png" class="logo-calc" alt="Calculadora">
         </div>
+
+        <div class="rightDivCalc">
+
+            <!-- Formulário da calculadora já com a implementação lógica feita com o JavaScript -->
+            <form action="#" method="post" id="contact">
+                <label for="preco_inicial">Preço Inicial:</label>
+                <input type="text" id="preco_inicial" name="preco_inicial" required><br><br>
+                <label for="desconto">Desconto (%):</label>
+                <input type="number" id="desconto" name="desconto" required><br><br>
+                <label for="resultado">Resultado:</label>
+                <input type="text" id="resultado" name="resultado" readonly>
+            </form>
+
+        </div>
+
+        <!-- Link do arquivo JavaScript -->
+        <script src="calculo-desconto.js"></script>
+
     </section>
 
+    <!--  Seção de contato -->
     <section class="Contato" id="Contato">
+        
         <div class="leftDivContato">
             <br><br>
+            
+            <!-- Título Principal-->
             <h1 id="title">CONTATE-NOS:</h1>
-
-            <form action="#" method="post">
+            
+            <!-- Formulário de contato-->
+            <form action="#" method="post"> 
                 <label for="name">Nome:</label>
                 <input type="text" id="name" name="name" required><br><br>
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required><br><br>
                 <label for="message">Mensagem:</label>
                 <textarea id="message" name="message" rows="4" required></textarea><br><br>
-                <input type="submit" value="Enviar" id="btnEnviar">
+                <input type="submit" value="Enviar" id="btnEnviar"> <!-- Botão que aciona a ação do formulário -->
             </form>
             
         </div>
+
         <div class="rightDivContato">
 
+            <!-- Elemento visual da seção de contato -->
             <img src="img/report.png" class="logo-calc" alt="Calculadora">
+
         </div>
+
     </section>
+
+    <!-- Copyright da página -->
     <footer>
         <p>&copy; 2024 calcupom. Todos os direitos reservados.</p>
     </footer>
