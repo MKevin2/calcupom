@@ -252,6 +252,22 @@ header {
   width: 25em;
 }
 
+#contato-form {
+  width: 32em;
+}
+
+#lblname, #lblmensagem, #lblemail {
+  font-size: 1.2em;
+}
+
+#name, #email {
+  height: 3em;
+}
+
+#mensagem {
+  height: 5em;
+}
+
 #resultado {
   background-color: #585067;
   color: #f1f1f1;
