@@ -382,3 +382,17 @@ textarea:focus {
   text-align: justify ;
   max-width: 470px;
 }
+
+.Confirmar {
+  background-image: url('img/background.png');
+  background-size: cover;    
+  background-position: center;     
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: #f1f1f1;
+  text-align: center;
+}

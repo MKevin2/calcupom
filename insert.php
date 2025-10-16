@@ -7,6 +7,8 @@
     $email = $_POST ['email']; 
     $mensagem = $_POST ['mensagem'];
 
+    $_SESSION['nome'] = $nome;
+
     try { // Tenta executar
         $sql = "INSERT INTO tbFeedback (nome, email, mensagem) VALUES (:nome, :email, :mensagem)";
         $stmt = $conn->prepare($sql);
@@ -19,8 +21,9 @@
         // Executa o comando
         $stmt->execute();
 
-        echo "Registro inserido com sucesso!";
+        header("Location: confirma.php"); // Redireciona para a página de confirmação
     } catch(PDOException $e) { // Se o try falhar, acontece o catch
         echo "Erro ao inserir: " . $e->getMessage(); // Mensagem de erro
     }
+
 ?>
